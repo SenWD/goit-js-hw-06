@@ -11,12 +11,20 @@ class Storage  {
     addItem(newItem) {
       return this.#items.push(newItem);
     }
-  
+    #checkitems(itemTo){
+      if (itemTo !== -1) {
+        return true;
+       }
+
+    }
+      
     removeItem(itemToRemove){
      
         const  itemTo = this.#items.indexOf(itemToRemove);
-        //if itemTo == -1 {console.log("dizide bulunmamamkta"); break;}
-        else {return this.#items.splice(itemTo,1)}
+        if(!this.#checkitems(itemTo)) { 
+          return this.#items.splice(itemTo,1);
+        }
+        
     }
   
   };
