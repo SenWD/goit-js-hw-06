@@ -20,17 +20,7 @@ class Storage  {
          }
        }
 
-    /*
-      
-    removeItem(itemToRemove){
-
-        const  itemTo = this.#items.indexOf(itemToRemove);
-        if (this.#checkitems(itemTo)) { 
-          return this.#items.splice(itemTo,1);
-            } 
-      } 
-  };
-  */
+    
   removeItem(itemToRemove) {
     if (this.#checkitems(itemToRemove)) {  
      
