@@ -11,23 +11,36 @@ class Storage  {
     addItem(newItem) {
       return this.#items.push(newItem);
     }
-    #checkitems(itemTo){
-      if (itemTo !== -1) {
+   
+    #checkitems(item){
+   
+     
+      if (item !== " ") {
         return true;
          }
        }
 
-    
+    /*
       
     removeItem(itemToRemove){
+
         const  itemTo = this.#items.indexOf(itemToRemove);
         if (this.#checkitems(itemTo)) { 
           return this.#items.splice(itemTo,1);
             } 
       } 
   };
+  */
+  removeItem(itemToRemove) {
+    if (this.#checkitems(itemToRemove)) {  
+     
+    this.#items = this.#items.filter((item) => item !== itemToRemove);
+ } else { console.log("boş bir dizi")}
+}
+  };
   
-  const storage = new Storage(["Nanitoids","Prolonger", "Antigravitator"]);
+ const storage = new Storage(["Nanitoids","Prolonger", "Antigravitator"]);
+ 
   console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
   storage.addItem("Droid");
   console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
